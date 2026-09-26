@@ -1,0 +1,20 @@
+# Réécriture d'URL Apache pour TaskFlow (XAMPP / WAMP / MAMP / Apache)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Si le fichier ou dossier demandé existe physiquement (css, js, images), on le sert directement
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Sinon, on redirige vers index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# Interdire l'affichage des répertoires
+Options -Indexes
+
+# Protection des fichiers sensibles
+<FilesMatch "(^\.env|\.sql|\.json|\.lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

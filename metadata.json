@@ -1,0 +1,6 @@
+{
+  "name": "TaskFlow - Gestion de Projets & Tâches",
+  "description": "Application web modulaire de gestion de projets et suivi des tâches pour équipes avec rôles, métriques et audit log.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
